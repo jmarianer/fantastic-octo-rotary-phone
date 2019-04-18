@@ -1,4 +1,4 @@
-Hooray! We are going to work on learning Git now!
+Hooray! We're going to work on learning Git now!
 
 Thank you, Joey!
 
