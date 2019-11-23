@@ -1,4 +1,5 @@
-#This program will read in an Excel file and print the contents of a specific cell.
+#This program will read in an Excel file and print the contents of a
+#specific cell and the total of a group of cells summed together.
 
 #import openpyxl module function load_workbook
 from openpyxl import load_workbook
@@ -18,11 +19,12 @@ my_val = cell.value
 #Print the cell value
 print(my_val)
 
-#Read in values of cells C1 through C5 and print
+#Read in values of cells C1 through C5 and print the total value.
 #Define the first value to be used as the base of the for loop.
 Total_Cell_Values = 0
 
 for i in range(1,6):
     C_Cell_value = sheet.cell(i,3).value
     Total_Cell_Values = Total_Cell_Values + C_Cell_value
+
 print(Total_Cell_Values)
