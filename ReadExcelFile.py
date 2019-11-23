@@ -21,5 +21,5 @@ print(my_val)
 #Read in values of cells C1 through C5 and print
 for i in range(1,6):
     C_Cell = sheet.cell(i,3)
-    C_Cell_value = sheet.cell(i,6)
+#    C_Cell_value = sheet.cell(i,6)
     print(C_Cell.value)
