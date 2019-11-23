@@ -20,8 +20,9 @@ print(my_val)
 
 #Read in values of cells C1 through C5 and print
 #Define the first value to be used as the base of the for loop.
-C_Cell = sheet.cell(1,3)
+Total_Cell_Values = 0
 
-for i in range(1,5):
-    C_Cell.value = C_Cell.value + sheet.cell(i+1,3).value
-print(C_Cell.value)
+for i in range(1,6):
+    C_Cell_value = sheet.cell(i,3).value
+    Total_Cell_Values = Total_Cell_Values + C_Cell_value
+print(Total_Cell_Values)
