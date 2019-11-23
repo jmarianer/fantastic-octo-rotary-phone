@@ -19,6 +19,9 @@ my_val = cell.value
 print(my_val)
 
 #Read in values of cells C1 through C5 and print
-for i in range(1,6):
-    C_Cell = sheet.cell(i,3)
-    print(C_Cell.value)
+#Define the first value to be used as the base of the for loop.
+C_Cell = sheet.cell(1,3)
+
+for i in range(1,5):
+    C_Cell.value = C_Cell.value + sheet.cell(i+1,3).value
+print(C_Cell.value)
