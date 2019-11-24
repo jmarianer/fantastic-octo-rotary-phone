@@ -27,4 +27,8 @@ for i in range(1,6):
     C_Cell_value = sheet.cell(i,3).value
     Total_Cell_Values = Total_Cell_Values + C_Cell_value
 
+#Write Total_Cell_Values to Excel file cell D1.
 print(Total_Cell_Values)
+sheet['D1'] = Total_Cell_Values
+
+wb.save("sample_output.xlsx")
