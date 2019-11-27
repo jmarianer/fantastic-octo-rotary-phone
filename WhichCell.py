@@ -26,9 +26,27 @@ print(Cells_List)
 #Square the value of each cell and write it to a new list.
 Cell_Squares=[]
 for i in range (1,6):
-    Cell_Squares.append=(Cells_List[i-1])*(Cells_List[i-1])
+    Cell_Squares.append((Cells_List[i-1])*(Cells_List[i-1]))
 print(Cell_Squares)
 
+#Cube the value of each cell and write it to a new list.
+Cell_Cubes=[]
+for i in range (1,6):
+    Cell_Cubes.append((Cells_List[i-1])*(Cells_List[i-1])*(Cells_List[i-1]))
+print(Cell_Cubes)
+
+#Take the even values only from Cells_List and write them to a new list.
+Cell_Evens=[]
+for i in range (1,6):
+    if (Cells_List[i-1])%2 == 0:
+        Cell_Evens.append(Cells_List[i-1])
+print(Cell_Evens)
+
+#Take the even values from Cell_Evens, square them, and write them to a new list.
+Cell_Even_Squares=[]
+for i in range (1,len(Cell_Evens)+1):
+    Cell_Even_Squares.append(Cell_Evens[i-1]*Cell_Evens[i-1])
+print(Cell_Even_Squares)
 
 #Print the values of list Cells_List.
 #for j in range(1,6):
