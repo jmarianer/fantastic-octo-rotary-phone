@@ -22,11 +22,12 @@ print(my_val)
 #Read in values of cells C1 through C5 as list (array).
 Cells_List=[]
 for i in range(1,6):
-    Cells_List.append(sheet.cell(i,3))
+    Cells_List.append(int(sheet.cell(i,3).value))
+print(Cells_List)
 
 #Print the values of list Cells_List.
 for j in range(1,6):
-    print(Cells_List[j-1].value)
+    print(Cells_List[j-1])
 
 #Read in values of cells C1 through C5 and print the total value.
 #Define the first value to be used as the base of the for loop.
