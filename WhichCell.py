@@ -25,7 +25,7 @@ print(Cells_List)
 
 #Square the value of each cell and write it to a new list.
 Cell_Squares=[]
-for i in range (0,4):
+for i in range (0,len(Cells_List)):
     Cell_Squares.append(Cells_List[i]*Cells_List[i])
 print(Cell_Squares)
 
