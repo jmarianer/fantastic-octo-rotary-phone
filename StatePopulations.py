@@ -13,6 +13,7 @@ sheet = wb['NST01']
 
 #Define variables.
 Total_State_Population = 0
+Total_US_Population = 0
 
 #Create a list of all the states and their populations.
 States_List=[]
@@ -29,10 +30,10 @@ print(State_Populations_List)
 print(Total_State_Population)
 
 #Read in the total US population and compare to the sum total above.
-Total_US_Population=sheet.cell(5,3)
-print(Total_US_Population.value)
+Total_US_Population = sheet.cell(5,3).value
+print(Total_US_Population)
 
-if Total_US_Population.value == Total_State_Population:
+if Total_US_Population == Total_State_Population:
     print('checks out')
 else:
     print('oops')
