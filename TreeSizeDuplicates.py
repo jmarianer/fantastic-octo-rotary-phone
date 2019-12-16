@@ -26,6 +26,7 @@ sheet.column_dimensions['A'].width=10
 #CR = current row, NR = next row.
 for i in range(5,sheet.max_row):
     j=i+1
+
     CR1B=sheet.cell(row=i,column=2)
     CR1D=sheet.cell(row=i,column=4)
     CR1E=sheet.cell(row=i,column=5)

@@ -23,12 +23,11 @@ for i in range(5, sheet.max_row):
 
     #Check if the file exists, then delete it.
     if os.path.exists(Cell_To_Check.value):
-        #print("Path exists.")
-        #print(sheet.cell(row=685,column=3).value+sheet.cell(row=685,column=2).value)
         try:
             os.rmdir(Cell_To_Check.value)
+            is_empty = True
         except OSError:
-            is_empty = False
+            pass
         if is_empty:
             Color_Fill_Duplicate_Deleted = PatternFill(fgColor='D8E4BC',
                                                        fill_type='solid')
