@@ -18,17 +18,20 @@ wb=load_workbook('C:\\aaTanker\TreeSize\jrl me folder - new.xlsx')
 sheet = wb['Custom Search']
 
 for i in range(5, sheet.max_row):
+
+    Cell_To_Check = sheet.cell(row=i,column=3)
+
     #Check if the file exists, then delete it.
-    if os.path.exists(sheet.cell(row=i,column=3).value):
+    if os.path.exists(Cell_To_Check.value):
         #print("Path exists.")
         #print(sheet.cell(row=685,column=3).value+sheet.cell(row=685,column=2).value)
         try:
-            os.rmdir(sheet.cell(row=i,column=3).value)
+            os.rmdir(Cell_To_Check.value)
         except OSError:
             is_empty = False
         if is_empty:
             Color_Fill_Duplicate_Deleted = PatternFill(fgColor='D8E4BC',
                                                        fill_type='solid')
-            sheet.cell(row=i,column=3).fill = Color_Fill_Duplicate_Deleted
+            Cell_To_Check.fill = Color_Fill_Duplicate_Deleted
         
 wb.save('C:\\aaTanker\TreeSize\jrl me folder - new.xlsx')

@@ -13,7 +13,7 @@ Sort by column A prior to running is currently required.
 from openpyxl import load_workbook
 
 #Define variable for the TreeSize workbook.
-wb=load_workbook('C:\\aaTanker\TreeSize\jrl me folder - duplicate.xlsx')
+wb=load_workbook(r'C:\\aaTanker\TreeSize\jrl me folder - duplicate.xlsx')
 
 #Define variable for the worksheet.
 sheet = wb['Custom Search']
