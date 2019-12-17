@@ -27,8 +27,7 @@ seen_tuples = set()
 
 #Compare a row to the next.
 #NR = next row.
-for i in range(5,sheet.max_row):
-    j=i+1
+for j in range(5,sheet.max_row):
     Duplicate_or_Different = sheet.cell(row=j,column=1)
 
     NR2B=sheet.cell(row=j,column=2)
