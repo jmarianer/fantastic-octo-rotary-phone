@@ -12,7 +12,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 
 #Define variable for the TreeSize workbook.
-wb=load_workbook('C:\\aaTanker\TreeSize\jrl me folder - new.xlsx')
+wb=load_workbook(r'C:\aaTanker\TreeSize\jrl me folder - new.xlsx')
 
 #Define variable for the worksheet.
 sheet = wb['Custom Search']
@@ -27,10 +27,10 @@ for i in range(5, sheet.max_row):
             os.rmdir(Cell_To_Check.value)
             is_empty = True
         except OSError:
-            pass
+            is_empty = False
         if is_empty:
             Color_Fill_Duplicate_Deleted = PatternFill(fgColor='D8E4BC',
                                                        fill_type='solid')
             Cell_To_Check.fill = Color_Fill_Duplicate_Deleted
         
-wb.save('C:\\aaTanker\TreeSize\jrl me folder - new.xlsx')
+wb.save(r'C:\aaTanker\TreeSize\jrl me folder - new.xlsx')

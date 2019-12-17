@@ -11,7 +11,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 
 #Define variable for the TreeSize workbook.
-wb=load_workbook('C:\\aaTanker\TreeSize\jrl me folder - new.xlsx')
+wb=load_workbook(r'C:\aaTanker\TreeSize\jrl me folder - new.xlsx')
 
 #Define variable for the worksheet.
 sheet = wb['Custom Search']
@@ -33,4 +33,4 @@ for i in range(714, sheet.max_row):
     else:
         print("The file does not exist.")
         
-wb.save('C:\\aaTanker\TreeSize\jrl me folder - new.xlsx')
+wb.save(r'C:\aaTanker\TreeSize\jrl me folder - new.xlsx')
