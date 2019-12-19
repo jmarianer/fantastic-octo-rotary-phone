@@ -23,17 +23,17 @@ sheet.column_dimensions['A'].width=10
 #Create a list variable for the file names.
 File_Names_List = []
 
+#Add the first value to the File_Names_List.
+File_Names_List.append(sheet.cell(5,1))
+
 #Determine if the file name is a duplicate of a previous file name.
-for i in range (5,sheet.max_row):
+for i in range (6,sheet.max_row):
 
     #Declare variables.
     Duplicate_or_Unique = sheet.cell(i,1)
     File_Name_Cell = sheet.cell(i,2)
     File_Folder_Cell = sheet.cell(i,3)
 
-    #Generate the File_Names_List.
-    File_Names_List.append(File_Name_Cell.value)
-    
     #Look to see if the File name is already in File_Names_List.  If it is,
     #then compare the files.
     if File_Name_Cell.value in File_Names_List:
@@ -47,5 +47,8 @@ for i in range (5,sheet.max_row):
 
     else:
         Duplicate_or_Unique.value = "Unique"
-        
+
+    #Generate the File_Names_List.
+    File_Names_List.append(File_Name_Cell.value)
+    
 wb.save(r'C:\aaTanker\TreeSize\jrl me folder - test output.xlsx')    
