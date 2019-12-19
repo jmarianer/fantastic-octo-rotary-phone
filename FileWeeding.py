@@ -24,7 +24,7 @@ sheet.column_dimensions['A'].width=10
 File_Names_List = []
 
 #Determine if the file name is a duplicate of a previous file name.
-for i in range(444,451):
+for i in range (5,sheet.max_row):
 
     #Declare variables.
     Duplicate_or_Unique = sheet.cell(i,1)
@@ -36,24 +36,16 @@ for i in range(444,451):
     
     #Look to see if the File name is already in File_Names_List.  If it is,
     #then compare the files.
-#    if(File_Names_List.index(File_Name_Cell.value)):
-        #sheet.cell(i,1).value = "Duplicate"
-
     if File_Name_Cell.value in File_Names_List:
-#        Duplicate_or_Unique.value = str((File_Names_List.index(File_Name_Cell.value)))
-         Duplicate_or_Unique.value = "Duplicate: "
-         + (File_Names_List.index(File_Name_Cell.value))
-#        filecmp.cmp(str(sheet.cell(Duplicate_or_Unique.value,3).value) 
+         Duplicate_or_Unique.value = "Duplicate: " \
+         + str(File_Names_List.index(File_Name_Cell.value)+5)
+         
+#         filecmp.cmp(str(sheet.cell(Duplicate_or_Unique.value,3).value) 
 #            + str(sheet.cell(Duplicate_or_Unique.value,2).value),
 #            str(File_Folder_Cell.value) + str(File_Name_Cell.value),
 #            shallow=False)
 
     else:
         Duplicate_or_Unique.value = "Unique"
-        #        Duplicate_or_Unique.value = "Duplicate: " 
-#        + str(File_Names_List.index(File_Name_Cell.value))
-       
-#        Duplicate_or_Unique.value = str((File_Names_List.index(File_Name_Cell.value))
-#            +" Duplicate")        
         
 wb.save(r'C:\aaTanker\TreeSize\jrl me folder - test output.xlsx')    
