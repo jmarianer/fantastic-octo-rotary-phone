@@ -40,16 +40,18 @@ for i in range(444,451):
         #sheet.cell(i,1).value = "Duplicate"
 
     if File_Name_Cell.value in File_Names_List:
-        Duplicate_or_Unique.value = str((File_Names_List.index(File_Name_Cell.value)))
-        
+#        Duplicate_or_Unique.value = str((File_Names_List.index(File_Name_Cell.value)))
+         Duplicate_or_Unique.value = "Duplicate: "
+         + (File_Names_List.index(File_Name_Cell.value))
 #        filecmp.cmp(str(sheet.cell(Duplicate_or_Unique.value,3).value) 
 #            + str(sheet.cell(Duplicate_or_Unique.value,2).value),
 #            str(File_Folder_Cell.value) + str(File_Name_Cell.value),
 #            shallow=False)
 
     else:
-        Duplicate_or_Unique.value = "Duplicate: " 
-        + str(File_Names_List.index(File_Name_Cell.value))
+        Duplicate_or_Unique.value = "Unique"
+        #        Duplicate_or_Unique.value = "Duplicate: " 
+#        + str(File_Names_List.index(File_Name_Cell.value))
        
 #        Duplicate_or_Unique.value = str((File_Names_List.index(File_Name_Cell.value))
 #            +" Duplicate")        
