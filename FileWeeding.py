@@ -25,6 +25,7 @@ File_Names_List = []
 
 #Add the first value to the File_Names_List.
 File_Names_List.append(sheet.cell(5,1))
+sheet.cell(5,1).value = "Unique"
 
 #Determine if the file name is a duplicate of a previous file name.
 for i in range (6,sheet.max_row):
