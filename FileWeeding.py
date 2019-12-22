@@ -16,35 +16,38 @@ import filecmp
 wb=load_workbook(r'C:\aaTanker\TreeSize\jrl me folder - new2.xlsx')
 sheet=wb['Custom Search']
 
+#Declare constants
+DUPLICATION_COLUMN = 1
+FILENAME_COLUMN = 2
+FILE_FOLDER_PATH = 3
+FIRST_DATA_ROW = 5
+
 #Insert a new column A.
-sheet.insert_cols(1)
+sheet.insert_cols(DUPLICATION_COLUMN)
 sheet.column_dimensions['A'].width=10
 
 #Create a list variable for the file names.
 File_Names_List = []
 
 #Add the first value to the File_Names_List.
-File_Names_List.append(sheet.cell(5,1))
-sheet.cell(5,1).value = "Unique"
+File_Names_List.append(sheet.cell(FIRST_DATA_ROW,DUPLICATION_COLUMN))
+sheet.cell(FIRST_DATA_ROW,DUPLICATION_COLUMN).value = "Unique"
 
 #Determine if the file name is a duplicate of a previous file name.
-for i in range (6,sheet.max_row):
+for i in range (FIRST_DATA_ROW + 1,sheet.max_row):
 
     #Declare variables.
-    Duplicate_or_Unique = sheet.cell(i,1)
-    File_Name_Cell = sheet.cell(i,2)
-    File_Folder_Cell = sheet.cell(i,3)
+    Duplicate_or_Unique = sheet.cell(i,DUPLICATION_COLUMN)
+    File_Name_Cell = sheet.cell(i,FILENAME_COLUMN)
+    File_Folder_Cell = sheet.cell(i,FILE_FOLDER_PATH)
 
     #Look to see if the File name is already in File_Names_List.  If it is,
     #then compare the files.
     if File_Name_Cell.value in File_Names_List:
          Duplicate_or_Unique.value = "Duplicate: " \
-         + str(File_Names_List.index(File_Name_Cell.value)+5)
+         + str(File_Names_List.index(File_Name_Cell.value)+FIRST_DATA_ROW)
          
-#         filecmp.cmp(str(sheet.cell(Duplicate_or_Unique.value,3).value) 
-#            + str(sheet.cell(Duplicate_or_Unique.value,2).value),
-#            str(File_Folder_Cell.value) + str(File_Name_Cell.value),
-#            shallow=False)
+         
 
     else:
         Duplicate_or_Unique.value = "Unique"
